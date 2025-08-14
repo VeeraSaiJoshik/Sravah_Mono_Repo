@@ -1,0 +1,10 @@
+To-Do : 
+    - Define all classes for base project architecture and pull from database
+    - Create data retrieval engines for certain tasks
+        - Create integration to pull tickets from Jira
+    - Create JWT based engine to send emails
+        - Create integration to send email via gmail
+    - Create JWT based engine to schedule calls
+        - Create integration to send email via google calendar
+    - Setup vector database in supabase and create core engine to pull from that database with different querying algorithms
+    - Create endpoint to initiate a call and cache data for endpoint
