@@ -10,17 +10,18 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/content": "^3.6.3",
-    "@nuxt/eslint": "^1.7.1",
-    "@nuxt/image": "^1.11.0",
-    "@nuxt/scripts": "^0.11.10",
-    "@nuxt/test-utils": "^3.19.2",
-    "@nuxt/ui": "^3.3.0",
-    "@unhead/vue": "^2.0.13",
-    "eslint": "^9.32.0",
-    "nuxt": "^4.0.1",
-    "typescript": "^5.9.2",
-    "vue": "^3.5.18",
-    "vue-router": "^4.5.1"
+    "@fortawesome/fontawesome-svg-core": "^7.0.0",
+    "@fortawesome/vue-fontawesome": "^3.1.1",
+    "@nuxtjs/fontawesome": "^1.1.2",
+    "@vesp/nuxt-fontawesome": "^2.0.0",
+    "nuxt": "^3.18.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vue": "^3.5.18"
+  },
+  "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^7.0.0",
+    "@fortawesome/free-regular-svg-icons": "^7.0.0",
+    "@fortawesome/free-solid-svg-icons": "^7.0.0",
+    "@nuxtjs/tailwindcss": "^6.14.0"
   }
 }
