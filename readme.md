@@ -1,5 +1,6 @@
 To-Do : 
-    - Define all classes for base project architecture and pull from database
+    - Setup Supabase ORM
+        - Define all classes for base project architecture and pull from database
     - Create data retrieval engines for certain tasks
         - Create integration to pull tickets from Jira
     - Create JWT based engine to send emails
