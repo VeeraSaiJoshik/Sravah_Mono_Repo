@@ -51,10 +51,6 @@ class Node(BaseModel) :
 
 class Tree : 
     def __init__(self):
-        self.dev_profile: DevProfile = DevProfile(
-            
-        )
-
         starting_node: Node = Node(
             id="", 
             profile=Profile(),

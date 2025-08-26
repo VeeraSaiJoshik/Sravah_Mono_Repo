@@ -2,7 +2,6 @@ from beanie import Document, Link
 from typing import List
 from pydantic import BaseModel
 from enum import Enum
-from prototype.models.database.user import User
 
 class TechType(str, Enum):
     FRONTEND = "Frontend"
@@ -20,7 +19,6 @@ class TechStack(BaseModel):
     technology_category: TechType
     usage_summary: str
 
-
 class ServiceType(str, Enum):
     AUTHENTICATION = "Authentication"
     EXTERNAL_API = "External API"
@@ -31,7 +29,7 @@ class ServiceType(str, Enum):
     STORAGE = "Storage"
     MONITORING = "Monitoring"
     OTHER = "Other"
-
+ 
 class Services(BaseModel):
     service_name: str
     type: ServiceType
@@ -51,10 +49,8 @@ class ProjectDetails(Document):
     services: list[Services]
     business_logic: list[BusinessTerms]
 
+    project_members: List
+
     class Settings: 
         name="Projects"
         allow_enums=True
-
-class UserRoles(BaseModel):
-    project: Link[ProjectDetails]
-    members: List[Link[User]]

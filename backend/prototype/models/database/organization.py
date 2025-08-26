@@ -9,5 +9,3 @@ class Organization(Document):
     
     class Settings : 
         name = "Organization"
-
-class Team(Document):
