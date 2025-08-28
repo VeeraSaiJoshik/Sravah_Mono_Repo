@@ -24,3 +24,13 @@ class Project(BaseModel) :
 
     tech_stack: list[str]
     lingo: list[Lingo]
+
+class DevProfile(BaseModel) :
+    dev_name: str
+    experience_years: int
+    frameworks: list[str] = []
+    databases: list[str] = []
+    tools: list[str] = []
+    past_projects: list[Project] = []
+    project_role: str = ""
+    project_responsibilities: str = ""

@@ -3,6 +3,7 @@ from uuid import UUID, uuid4
 from enum import Enum
 from typing import Literal
 import models.checklist as cl
+import models.projects as prj
 
 class NodeCategory(Enum) : 
     BLOCKER = 1
@@ -15,16 +16,16 @@ class NodeType(Enum) :
     REAFFIRM = 3
 
 class Profile(BaseModel) :
-    project_id: int
+    project_id: int | None = None
 
     weight: int
-    node_category: NodeCategory
-    node_type: NodeType
-    node_description: str
+    node_category: NodeCategory | None = None
+    node_type: NodeType | None = None
+    node_description: str = ""
 
-    raw_convo_snippet: str
-    context: list[str]
-    response: str
+    raw_convo_snippet: str = ""
+    context: list[str] = Field(default_factory=list)
+    response: str = ""
 
     @property
     def checklist(self) -> str :
@@ -51,9 +52,7 @@ class Node(BaseModel) :
 
 class Tree : 
     def __init__(self):
-        self.dev_profile: DevProfile = DevProfile(
-            
-        )
+        self.dev_profile = prj.DevProfile()
 
         starting_node: Node = Node(
             id="", 
@@ -80,7 +79,7 @@ class Tree :
 
         end_nodes = []
         for child in cur_node.children_nodes : 
-            end_nodes += self.get_frontier_nodes(child)
+            end_nodes.extend(self.get_frontier_nodes(child))
         
         return end_nodes
     
