@@ -9,7 +9,7 @@ class BaseAgent(ABC):
         pass
 
     @abstractmethod
-    async def run(self, raw_input: str) -> dict:
+    def run(self, raw_input: str) -> dict:
         """Run the agent on input and return structured output."""
         pass
 

@@ -1,13 +1,13 @@
 import json
 from openai import OpenAI
-from .base_agent import BaseAgent
+from .baseAgent import BaseAgent
 
-class ClassificationAgent(BaseAgent):
+class FrontierDistributorAgent(BaseAgent):
     @property
     def purpose(self) -> str:
         return "Classifies standup updates into categories (Blockers, Yesterday, Today) and projects."
 
-    async def run(self, raw_input: str, client: OpenAI) -> dict:
+    def run(self, raw_input: str, client: OpenAI) -> dict:
         try:
             system_prompt = """
             You are a parser and a responder that takes a developer's standup update and outputs
