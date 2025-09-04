@@ -5,6 +5,7 @@ from typing import Literal
 import models.checklist as cl
 import models.projects as prj
 
+
 class NodeCategory(Enum) : 
     BLOCKER = 1
     YESTERDAY_TASKS = 2
