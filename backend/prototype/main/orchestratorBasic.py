@@ -15,8 +15,7 @@ def main():
     while True:
         user_input = input("\nYou: ")
         result = frontier_agent.run(user_input, client = client)
-        data = json.loads(result)
-        print(f"Assistant: {data.get('response', '[No response found]')}")
+        print(f"Assistant: {result.get('response', '[No response found]')}")
 
 
 if __name__ == "__main__":

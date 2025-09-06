@@ -1,0 +1,20 @@
+[
+  {
+    "id": "blk-104",
+    "title": "Frontend widget blank when ML API returns empty payload",
+    "core_issue": "Frontend not handling null/empty API responses.",
+    "root_cause": "ML API failed for emoji-only reviews (edge case).",
+    "solution": "Update ML to handle emojis; add frontend fallback for null values.",
+    "tags": ["frontend", "ml-service", "api-null"],
+    "resolved_by": "Liam Patel"
+  },
+  {
+    "id": "blk-099",
+    "title": "Dashboard stalls due to slow API responses",
+    "core_issue": "API response time exceeded frontend timeout.",
+    "root_cause": "Missing async handling and retry logic in React component.",
+    "solution": "Add timeout extension + retry; improve API caching.",
+    "tags": ["frontend", "performance", "ml-service"],
+    "resolved_by": "Alice Johnson"
+  }
+]
