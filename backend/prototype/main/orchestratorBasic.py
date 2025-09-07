@@ -4,6 +4,7 @@ import json
 from openai import OpenAI
 from dotenv import load_dotenv
 from core.agents.frontierDistributorAgent import FrontierDistributorAgent
+from models.BlockerInternalDataTypes import TriageRecord, LineItemAnswer
 
 def main():
     load_dotenv()
