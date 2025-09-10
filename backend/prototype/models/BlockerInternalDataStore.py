@@ -49,12 +49,20 @@ class Ticket:
     id: str
     title: str
     assigned_to: str
-    status: str
-    dependencies: List[str] = field(default_factory=list)
+    project_id: str
     description: str = ""
+    asignee: str
+    asignee_email: str = ""
+    status: str
+    created_at: str
+    updated_at: str
     tags: List[str] = field(default_factory=list)
-    last_update: str = ""
-
+    dependencies: List[str] = field(default_factory=list)
+    root_cause: str
+    solution: str = ""
+    milestone: str
+    priority: str = ""
+    comments_count: int = 0
 
 @dataclass
 class TaskManagement:

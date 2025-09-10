@@ -28,5 +28,35 @@
     "project_responsibilities": "Coordinate across teams; manage deadlines.",
     "contact": {"slack": "@maria", "email": "maria@example.com"},
     "timezone": "America/New_York"
+  },
+  {
+    "id": "u-004",
+    "name": "Ethan Lee",
+    "role": "Backend Developer",
+    "current_task": "Implementing retry logic for sentiment API",
+    "skills": ["Python", "Flask", "PostgreSQL", "Async Programming"],
+    "project_responsibilities": "Build backend endpoints; optimize API performance.",
+    "contact": {"slack": "@ethan", "email": "ethan@example.com"},
+    "timezone": "America/Denver"
+  },
+  {
+    "id": "u-005",
+    "name": "Sofia Ramirez",
+    "role": "QA Engineer",
+    "current_task": "Stress-testing dashboard under high load scenarios",
+    "skills": ["Selenium", "Jest", "Load Testing", "Bug Tracking"],
+    "project_responsibilities": "Design test plans; report bugs; validate fixes.",
+    "contact": {"slack": "@sofia", "email": "sofia@example.com"},
+    "timezone": "America/New_York"
+  },
+  {
+    "id": "u-006",
+    "name": "Noah Kim",
+    "role": "Data Engineer",
+    "current_task": "Ensuring data pipeline reliability for ML service",
+    "skills": ["Python", "Airflow", "ETL", "Data Validation"],
+    "project_responsibilities": "Maintain ETL pipelines; monitor data quality; optimize storage.",
+    "contact": {"slack": "@noah", "email": "noah@example.com"},
+    "timezone": "America/Los_Angeles"
   }
 ]
