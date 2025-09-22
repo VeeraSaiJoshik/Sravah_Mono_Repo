@@ -17,7 +17,7 @@
       "status": "In Progress",
       "milestones":[
         {"id": "ms-001", "name": "ML ad config system", "due_data": "2025-9-10-9", "status": "Done"},
-        {"id": "ms-002", "name": "Web/Micro Services", "due_data": "2026-3-10-9", "status": "Developing"},
+        {"id": "ms-002", "name": "Web/Micro Services", "due_data": "2026-3-10-9", "status": "Developing"}
       ]
     },
     {
