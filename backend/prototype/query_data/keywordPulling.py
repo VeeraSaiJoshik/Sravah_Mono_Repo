@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from models.BlockerInternalDataStore import KeywordsData
 
 password = "4SnPc6Zp2dOyWToP"
 username = "gvsharshith_db_user"
@@ -12,23 +13,23 @@ collection = db["keywords"]
 ##THIS IS TO PULL ALL INFO
 docs = collection.find({}) 
 for doc in docs:
-    print(doc)
+    keywords_data = KeywordsData.from_mongo(doc)
+    print(keywords_data)
 
-##THIS IS TO PULL ONE KEY
-doc = collection.find_one({}, {"ml-service": 1, "_id": 0})
-print(doc)
-
-#MULTIPLE FIELDS
-doc = collection.find_one({}, {"sentiment-widget": 1, "emoji-edge-case": 1, "_id": 0})
-print(doc)
 
 #pulls all document objects, projects queried items
 cursor = collection.find({}, {"ml-service": 1, "staging-environment": 1, "_id": 0})
+print("\nprojecting queried, pulls all")
 for doc in cursor:
-    print(doc)
+    keywords_data = KeywordsData.from_mongo(doc)
+    for k, v in keywords_data.keywords.items():
+        print(f"{k}: {v}")
+
 
 #pulls only documents with queried items (filteringwh)
+print("\nfiltering")
 doc = collection.find_one({"sentiment-widget": {"$exists": True}})
-print(doc)
-
+if doc:
+    keywords_data = KeywordsData.from_mongo(doc)
+    print(keywords_data.keywords.get("sentiment-widget"))
 
