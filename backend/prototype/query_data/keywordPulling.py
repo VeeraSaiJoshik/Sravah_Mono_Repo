@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from models.BlockerInternalDataStore import KeywordsData
+from ..models.mongo_schema.KeyWords_Schema import KeywordsData
 
 password = "4SnPc6Zp2dOyWToP"
 username = "gvsharshith_db_user"

@@ -5,7 +5,7 @@ from openai import OpenAI
 from dotenv import load_dotenv
 from core.agents.frontierDistributorAgent import FrontierDistributorAgent
 from core.agents.blocker_agents.conversationAgents.triageWrapper1 import Wrapper1TriageAgent
-from models.BlockerInternalDataTypes import TriageRecord, LineItemAnswer
+from backend.prototype.models.Internal_models.BlockerInternalDataTypes import TriageRecord, LineItemAnswer
 
 QuestionTriage = "Before we get too deep in, could you quickly describe what the business implications of the blocker? Where is it currently reproducable/discoverd?"
 response_flag = False

@@ -18,20 +18,6 @@ class KeywordsData:
             doc.pop("_id")
         return cls(keywords=doc)
 
-# #Blockers.json
-# @dataclass
-# class Blocker:
-#     id: str
-#     title: str
-#     core_issue: str
-#     root_cause: str
-#     solution: str
-#     tags: List[str] = field(default_factory=list)
-#     resolved_by: str = ""
-
-
-
-
 
 # #TaskManagement.json
 # @dataclass
