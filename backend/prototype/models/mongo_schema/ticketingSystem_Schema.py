@@ -39,3 +39,22 @@ class Project:
             status=data.get("status", ""),
             milestones=milestones,
         )
+
+## TICKET SCHEMA
+@dataclass
+class Ticket:
+    id: str
+    project_id: str
+    description: str
+    root_cause: str
+    solution: str
+
+    @classmethod
+    def from_mongo(cls, data: Dict[str, Any]) -> "Ticket":
+        return cls(
+            id=data.get("id", ""),
+            project_id=data.get("project_id", ""),
+            description=data.get("description", ""),
+            root_cause=data.get("root_cause", ""),
+            solution=data.get("solution", ""),
+        )
