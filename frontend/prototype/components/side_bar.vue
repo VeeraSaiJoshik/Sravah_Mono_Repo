@@ -1,42 +1,33 @@
 <template>
-  <div class="fixed top-[66px] left-[10px] bottom-[10px] z-50">
-    <div class="w-[440px] h-full shadow-md rounded-md p-2 bg-white flex flex-col items-center">
-      <!-- Top Tab Buttons -->
-      <div class="flex font-sans font-[600] text-sm space-x-2 p-[6px] bg-gray-100 rounded-md transition-all ease-in-out duration-300">
-        <button
-          :class="tabClass(SideBarState.SUMMARY)"
-          @click="() => changeTab(SideBarState.SUMMARY)">
-          Summary
-        </button>
-        <button
-          :class="tabClass(SideBarState.CHAT)"
-          @click="() => changeTab(SideBarState.CHAT)">
-          Chat
-        </button>
-        <button
-          :class="tabClass(SideBarState.ACTIONS)"
-          @click="() => changeTab(SideBarState.ACTIONS)">
-          Actions
-        </button>
+  <div class="w-full h-full bg-white rounded-xl border border-gray-200 shadow-lg p-2 flex flex-col items-start">
+    <!-- Scrollable Pages -->
+    <div
+      ref="scrollContainer"
+      class="flex overflow-hidden transition-all duration-300 w-full h-full"
+      style="scroll-behavior: smooth;"
+    >
+      <!-- Each Page -->
+      <div class="w-full shrink-0 h-full">
+        <Summary_screen />
       </div>
-
-      <!-- Scrollable Pages -->
-      <div
-        ref="scrollContainer"
-        class="flex overflow-hidden transition-all duration-300 w-full h-full"
-        style="scroll-behavior: smooth;"
-      >
-        <!-- Each Page -->
-        <div class="w-full shrink-0 h-full">
-          <Summary_screen />
-        </div>
-        <div class="w-full shrink-0 h-full">
-          <Chat_screen :chats="chat"/>
-        </div>
-        <div class="w-full shrink-0 h-full">
-          <Actions_screen />
-        </div>
+      <div class="w-full shrink-0 h-full">
+        <Chat_screen :chats="chat"/>
       </div>
+      <div class="w-full shrink-0 h-full">
+        <Actions_screen />
+      </div>
+    </div>
+    <div class="flex font-sans font-[600] space-x-2 p-[3px] bg-gray-100 rounded-md transition-all ease-in-out duration-300">
+      <button
+        :class="tabClass(SideBarState.CHAT)"
+        @click="() => changeTab(SideBarState.CHAT)">
+        💬
+      </button>
+      <button
+        :class="tabClass(SideBarState.ACTIONS)"
+        @click="() => changeTab(SideBarState.ACTIONS)">
+        ✏️
+      </button>
     </div>
   </div>
 </template>
