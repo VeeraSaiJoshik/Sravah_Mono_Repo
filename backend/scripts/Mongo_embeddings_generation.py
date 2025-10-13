@@ -7,14 +7,11 @@ from tqdm import tqdm
 # Load environment variables
 load_dotenv()
 
-# MongoDB connection
-password = "4SnPc6Zp2dOyWToP"
-username = "gvsharshith_db_user"
-uri = f"mongodb+srv://{username}:{password}@development.edtqqxr.mongodb.net/?retryWrites=true&w=majority&appName=Development"
-
+uri = os.getenv("MONGO_URI")
+db_name = os.getenv("MONGO_DB_NAME")
 # connect to Mongo
 client = MongoClient(uri)
-db = client["BackendSymtheticData"]
+db = client[db_name]
 projects_collection = db["projects"]
 
 # Load embedding model (downloads on first run, ~80MB)

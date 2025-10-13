@@ -11,8 +11,8 @@ if not ANTHROPIC_API_KEY:
 MAX_NEGOTIATION_ROUNDS = 20  # Prevent infinite loops
 TEMPERATURE = 0.7
 
-MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
-MONGO_DB_NAME = os.getenv("MONGO_DB_NAME", "pm_automation")
+MONGO_URI = os.getenv("MONGO_URI")
+MONGO_DB_NAME = os.getenv("MONGO_DB_NAME")
 
 # Check if using MongoDB Atlas (supports $vectorSearch) or local
 IS_ATLAS = "mongodb.net" in MONGO_URI or "mongodb+srv" in MONGO_URI
